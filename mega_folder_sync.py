@@ -39,7 +39,10 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
+# Credit to this GOAT:
 # https://stackoverflow.com/questions/64488709/how-can-i-list-the-contents-of-a-mega-public-folder-by-its-shared-url-using-meg
+
+
 def get_nodes_in_shared_folder(root_folder: str) -> dict:
     """Get the nodes in a MEGA shared folder.
     This will get all folders and files within a root directory URL handle
