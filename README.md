@@ -8,7 +8,7 @@
 
 ## About <a name = "about"></a>
 
-I, like many people, are extremely lazy and struggle to make sure that I continually check and download shows that are currently running when I'm not activley watching them. Sure I'll get around to it, but I'd like to make sure my shows are ready to go when I want to watch them.
+I, like many people, am extremely lazy and struggle to make sure that I continually check and download shows that are currently running when I'm not activley watching them. Sure I'll get around to it, but I'd like to make sure my shows are ready to go when I want to watch them.
 
 This python script is a way to interface with MEGA's extremely convoluted API and download items from folders defined within the JSON file.
 
