@@ -250,8 +250,8 @@ def update_folders():
     mega = Mega()
 
     while True:
-        email = input("Please enter MEGA email:")
-        pwd = getpass.getpass("Please enter MEGA password:")
+        email = input("Please enter MEGA email: ")
+        pwd = getpass.getpass("Please enter MEGA password: ")
 
         try:
             m = mega.login(email, pwd)
@@ -272,8 +272,7 @@ def update_folders():
         local_directory = entry["local-location"]
         url = entry["folder-url"]
 
-        print("Checking entry - " + Fore.CYAN + name)
-        print(Style.RESET_ALL)
+        print("Checking entry - " + Fore.CYAN + name + Style.RESET_ALL)
 
         try:
             valid = validators.url(url)
@@ -300,17 +299,20 @@ def update_folders():
                 attrs = decrypt_attr(base64_url_decode(node["a"]), k)
                 file_name = attrs["n"]
 
-                print("File Name: " + Fore.CYAN + file_name)
-                print(Style.RESET_ALL)
+                print("\tFile Name: " + Fore.CYAN + file_name + Style.RESET_ALL)
 
                 if not os.path.isfile(os.path.join(local_directory + "\\" + file_name)):
                     download_data = get_nodes_to_download(root_folder, node)
                     mega_download_file(m, download_data, key, dest_path=local_directory)
-                    print(Fore.GREEN + "Downloaded")
-                    print(Style.RESET_ALL)
+                    print("\t\t" + Fore.GREEN + "Downloaded" + Style.RESET_ALL)
+                    print()
                 else:
-                    print(Fore.YELLOW + "\tFile already exists - skipping")
-                    print(Style.RESET_ALL)
+                    print(
+                        Fore.YELLOW
+                        + "\t\tFile already exists - skipping"
+                        + Style.RESET_ALL
+                    )
+                    print()
             elif node["t"] == 1:  # Is a folder
                 k = key
                 attrs = decrypt_attr(base64_url_decode(node["a"]), k)
