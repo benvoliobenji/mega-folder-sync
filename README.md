@@ -36,4 +36,4 @@ to get all the necessary modules to execute.
 
 First, ensure you have all items you want to track located in the *file_locations.json* file provided in the repository. There is a template to start with, and can support multiple items. The script does to a courtesy check that the URL is valid and will create a directory if the local provided directory does not exist.
 
-Once the contents of *file_locations.json* has been updated, call ```python mega_sync.py```. This will print out to the console the folders and items within the folder it is looking for, skipping, and downloading.
+Once the contents of *file_locations.json* has been updated, call ```python mega_folder_sync.py```. This will print out to the console the folders and items within the folder it is looking for, skipping, and downloading.
